@@ -3,8 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const router = express.Router();
-const Pool = require('pg');
+const {Pool} = require('pg');
 const Qovery = require('qovery-client/src/Qovery');
 
 const app = express();
@@ -21,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Qovery
-const qovery = new Qovery();
+const qovery = new Qovery('.qovery/local_configuration.json');
 const dbConf = qovery.getDatabases()[0];
 
 // PostgreSQL
@@ -31,6 +30,15 @@ const pool = new Pool({
     database: 'postgres',
     password: dbConf.password,
     port: dbConf.port,
+});
+
+app.get('/', function (req, res, next) {
+    pool
+    res.render('index', {title: 'Express'});
+});
+
+app.get('/users', function (req, res, next) {
+    res.send('respond with a resource');
 });
 
 // catch 404 and forward to error handler
@@ -47,14 +55,6 @@ app.use(function (err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
-});
-
-router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Express'});
-});
-
-router.get('/users', function (req, res, next) {
-    res.send('respond with a resource');
 });
 
 module.exports = app;
