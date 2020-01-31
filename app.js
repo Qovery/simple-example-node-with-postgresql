@@ -4,7 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const {Pool} = require('pg');
-const Qovery = require('qovery-client/src/Qovery');
 
 const app = express();
 
@@ -18,23 +17,18 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// Qovery
-const qovery = new Qovery('.qovery/local_configuration.json');
-const dbConf = qovery.getDatabases()[0];
-
 // PostgreSQL
 const pool = new Pool({
-    user: dbConf.username,
-    host: dbConf.host,
-    database: 'postgres',
-    password: dbConf.password,
-    port: dbConf.port,
+    connectionString: process.env.QOVERY_DATABASE_MY_POSTGRESQL_3498225_CONNECTION_URI
+});
+
+pool.query('SELECT NOW()', (err, res) => {
+    console.log(err, res);
+    pool.end()
 });
 
 app.get('/', function (req, res, next) {
-    pool
-    res.render('index', {title: 'Express'});
+    pool.res.render('index', {title: 'Express'});
 });
 
 app.get('/users', function (req, res, next) {
