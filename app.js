@@ -27,7 +27,6 @@ const pool = new Pool({
 });
 
 app.get('/', function (req, res, next) {
-    pool
     res.render('index', {title: 'Express'});
 });
 
