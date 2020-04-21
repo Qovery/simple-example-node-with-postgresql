@@ -9,7 +9,9 @@ databases:
   name: my-postgresql-3498225
 routers:
 - name: main
+  custom_domains:
+  - domain: "node.deimos.fr"
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
-    - /*
+    - /
