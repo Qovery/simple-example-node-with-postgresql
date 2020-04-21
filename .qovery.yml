@@ -10,7 +10,8 @@ databases:
 routers:
 - name: main
   custom_domains:
-  - domain: "node.deimos.fr"
+  - branch: master
+    domain: node.deimos.fr
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
