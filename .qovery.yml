@@ -11,7 +11,7 @@ routers:
 - name: main
   custom_domains:
   - branch: master
-    domain: node.deimos.fr
+    domain: node.algo.green
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
