@@ -22,4 +22,3 @@ routers:
   - application_name: simple-example-node-with-postgresql
     paths:
     - /
-
