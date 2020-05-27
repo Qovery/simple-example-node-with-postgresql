@@ -9,7 +9,7 @@ application:
     size: 10GB
 databases:
 - type: postgresql
-  version: "11.5"
+  version: "11.8"
   name: my-postgresql-3498225
 routers:
 - name: main
