@@ -11,6 +11,9 @@ databases:
 - type: postgresql
   version: "11"
   name: my-postgresql-3498225
+- type: mysql
+  version: "8"
+  name: my-mysql
 routers:
 - name: main
   custom_domains:
