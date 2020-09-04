@@ -13,11 +13,6 @@ databases:
   name: my-postgresql-3498225
 routers:
 - name: main
-  custom_domains:
-  - branch: master
-    domain: node.algo.green
-  - branch: master
-    domain: node2.algo.green
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
