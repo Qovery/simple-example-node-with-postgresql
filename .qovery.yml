@@ -3,10 +3,10 @@ application:
   project: simple-example-node-with-postgresql
   cloud_region: aws/eu-west-3
   publicly_accessible: true
-#  storage:
-#  - name: images
-#    type: ssd
-#    size: 10GB
+  storage:
+  - name: images
+    type: ssd
+    size: 10GB
 databases:
 - type: postgresql
   version: "11.5"
@@ -17,3 +17,4 @@ routers:
   - application_name: simple-example-node-with-postgresql
     paths:
     - /
+
