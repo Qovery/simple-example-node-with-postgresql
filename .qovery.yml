@@ -1,6 +1,6 @@
 application:
   name: simple-example-node-with-postgresql
-  project: simple-example-node-with-postgresql
+  project: simple-example-node-with-postgresql-2
   cloud_region: aws/eu-west-3
   publicly_accessible: true
   storage:
