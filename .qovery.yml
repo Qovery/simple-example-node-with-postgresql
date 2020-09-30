@@ -13,6 +13,9 @@ databases:
   name: my-postgresql-3498225
 routers:
 - name: main
+  custom_domains:
+  - branch: master
+    domain: test123.qvy.io
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
