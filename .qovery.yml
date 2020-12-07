@@ -5,7 +5,7 @@ application:
 databases:
 - type: postgresql
   version: "12"
-  name: my-postgresql-3498225
+  name: my-psql
 routers:
 - name: main
   routes:
