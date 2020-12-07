@@ -1,21 +1,13 @@
 application:
   name: simple-example-node-with-postgresql
   project: simple-example-node-with-postgresql-2
-  cloud_region: aws/eu-west-3
   publicly_accessible: true
-  storage:
-  - name: images
-    type: ssd
-    size: 10GB
 databases:
 - type: postgresql
-  version: "11.5"
+  version: "12"
   name: my-postgresql-3498225
 routers:
 - name: main
-  custom_domains:
-  - branch: master
-    domain: test123.qvy.io
   routes:
   - application_name: simple-example-node-with-postgresql
     paths:
