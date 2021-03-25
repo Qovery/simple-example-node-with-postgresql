@@ -1,15 +1,15 @@
 ---
 application:
-  name: "simple-example-node-with-postgresql"
-  project: "rgrgff"
+  name: "sig"
+  project: "rgrghh"
   organization: "QoveryCommunity"
 databases:
 - type: "POSTGRESQL"
   name: "leaf"
-  version: "9"
+  version: "11"
 routers:
-- name: "main-simple-example-node-with-postgresql"
+- name: "main-sig"
   routes:
-  - application_name: "simple-example-node-with-postgresql"
+  - application_name: "sig"
     paths:
     - "/*"
